@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintHeight_default="wrap"
+    app:layout_constraintWidth_default="spread"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent">
+    <!--android:maxWidth= "25sp"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_default="spread"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/head_search"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/header_gradient"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:paddingTop="5dip">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="154dp"
+                android:layout_height="67dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logo" />
+
+            <SearchView
+                android:id="@+id/search_view"
+                style="@android:style/Widget.Material.Light.SearchView"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:gravity="center|start|center_horizontal"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search here">
+
+            </SearchView>
+
+
+        </LinearLayout>
+
+
+        <HorizontalScrollView
+            android:id="@+id/slider"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:layout_below="@+id/head_search"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+
+            <!--app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.514"-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:scaleType="centerInside">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/a001" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/a002" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/a003" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/lower_search"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/header_gradient"
+            android:orientation="horizontal"
+            android:paddingTop="5dip">
+
+            <ImageButton
+                android:id="@+id/menuButton"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/menu" />
+
+            <ImageButton
+                android:id="@+id/massageButton"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/massage" />
+
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
