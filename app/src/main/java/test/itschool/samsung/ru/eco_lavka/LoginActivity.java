@@ -55,7 +55,8 @@ public class LoginActivity extends Activity {
         Button enterLogin = findViewById(R.id.btnLogin);
         enterLogin.setOnClickListener(v -> {
             sendPOST(v);
-            Log.v(LOG_TAG, "response main" + id);
+
+            Log.v(LOG_TAG, "response main " + id);
             if (id != -1 && id != 0) {
                 Intent intent=new Intent(LoginActivity.this, MainWidgets.class);
                 startActivity(intent);

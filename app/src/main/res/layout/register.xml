@@ -147,6 +147,12 @@
                 android:layout_height="36dp"
                 android:layout_marginTop="10dip"
                 android:text="Register New Account" />
+
+            <TextView
+                android:id="@+id/answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#4CAF50" />
             <!-- Link to Login Screen -->
             <TextView
                 android:id="@+id/link_to_login"

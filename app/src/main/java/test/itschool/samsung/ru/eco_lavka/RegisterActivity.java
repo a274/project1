@@ -23,8 +23,7 @@ public class RegisterActivity extends Activity {
     private final String baseUrl = "http://a274.sytes.net/php_server/";
     private EditText reg_name, reg_surname, reg_email, reg_password, reg_address, reg_phonenumber;
     private String name, surname, email, password, phonenumber, address;
-    private Button btnRegister;
-    private TextView loginScreen;
+    private TextView answer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,13 +39,13 @@ public class RegisterActivity extends Activity {
 
 
         // LOGIN
-        loginScreen = findViewById(R.id.link_to_login);
+        TextView loginScreen = findViewById(R.id.link_to_login);
         loginScreen.setOnClickListener(v -> finish());
 
 
         //REGISTER
-        btnRegister = findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(v -> sendPOST(v));
+        Button btnRegister = findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(this::sendPOST);
     }
 
     public void sendPOST(View view) {
@@ -57,6 +56,7 @@ public class RegisterActivity extends Activity {
         phonenumber = reg_phonenumber.getText().toString();
         address = reg_address.getText().toString();
 
+        answer = findViewById(R.id.answer);
         new MyAsyncTask().execute("");
     }
 
@@ -76,13 +76,19 @@ public class RegisterActivity extends Activity {
 
             UserService userService = retrofit.create(UserService.class);
 
-            Call<User> userCall = userService.register(name, surname, email, password, phonenumber, address);
+            Call<User> userCall = userService
+                    .register(name, surname, email, password, phonenumber, address);
             userCall.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
                     if (response.isSuccessful()) {
                         User user = response.body();
-                        Log.v(LOG_TAG, "response " + user.getSurname() + " " + user.getName_() + " " + user.getEmail() + user.getPhoneNumber() + user.getPassword());
+                        Log.v(LOG_TAG, "response " + user.getSurname()
+                                + " " + user.getName_()
+                                + " " + user.getEmail()
+                                + " "  + user.getPhoneNumber()
+                                + " " + user.getPassword());
+                        answer.setText("Вы успешно зарегистрированны!");
                     } else {
                         Log.e(LOG_TAG,"response code " + response.code());
                     }
