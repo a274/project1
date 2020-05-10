@@ -15,12 +15,9 @@ public class MainWidgets extends AppCompatActivity {
 
         ImageButton Catalog = (ImageButton) findViewById(R.id.menuButton);
 
-        Catalog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainWidgets.this, CategoriesMenu.class);
-                startActivity(intent);
-            }
+        Catalog.setOnClickListener(v -> {
+            Intent intent=new Intent(MainWidgets.this, Categories.class);
+           startActivity(intent);
         });
     }
 

@@ -1,29 +1,22 @@
 package test.itschool.samsung.ru.eco_lavka;
 
-public class Categories {
-    private String name; // название
-    private int ImageResource; // ресурс флага
+import android.app.ListActivity;
+import android.content.Context;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
 
-    public Categories(String name, int image){
+public class Categories extends ListActivity {
+    final  String[] categories = new String[] {"Молоко", "Мясо", "Овощи"};
 
-        this.name=name;
-        this.ImageResource=image;
+    private ArrayAdapter<String> mAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mAdapter = new ArrayAdapter<String>(this, R.layout.menu_categories, categories);
+        setListAdapter(mAdapter);
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getImageResource() {
-        return this.ImageResource;
-    }
-
-    public void setImageResource(int ImageResource) {
-        this.ImageResource = ImageResource;
-    }
 }
 
