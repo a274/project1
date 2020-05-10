@@ -20,6 +20,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static java.lang.Thread.sleep;
+
 
 public class LoginActivity extends Activity {
 
@@ -55,6 +57,8 @@ public class LoginActivity extends Activity {
         Button enterLogin = findViewById(R.id.btnLogin);
         enterLogin.setOnClickListener(v -> {
             sendPOST(v);
+
+
 
             Log.v(LOG_TAG, "response main " + id);
             if (id != -1 && id != 0) {

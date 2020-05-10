@@ -1,6 +1,7 @@
 package test.itschool.samsung.ru.eco_lavka;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -120,6 +121,10 @@ public class RegisterActivity extends Activity {
                                 + " "  + user.getPhoneNumber()
                                 + " " + user.getPassword());
                         answer.setText("Вы успешно зарегистрированны!");
+
+                        Intent i = new Intent(RegisterActivity.this, MainWidgets.class);
+                        startActivity(i);
+                        
                     } else {
                         answer.setText("Возникла ошибка.");
                         Log.e(LOG_TAG,"response code " + response.code());
