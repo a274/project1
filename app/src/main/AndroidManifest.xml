@@ -39,8 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name=".CategoriesMenu"
-        android:label="Open categories"></activity>
-    </application>
+    <activity android:name=".Categories"
+        android:label="Menu categories"></activity>
+</application>
 
 </manifest>
