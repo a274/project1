@@ -7,8 +7,8 @@ public interface UserService {
     @GET("login.php")
     Call<Integer> login(@Query("login") String login, @Query("password") String password);
 
-    @GET("registration.php")
-    Call<User> register(
+    @GET("register.php")
+    Call<Integer> register(
             @Query("name_") String name_,
             @Query("surname") String surname,
             @Query("email") String email,

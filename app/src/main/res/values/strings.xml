@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Eco lavka</string>
-    <color name="white">#FFFFFF</color>
-    <color name="green">#68F359</color>
-    <color name="light_green">#8FF7A0</color>
+    <string name="been_registered">Вы уже зарегистрированны!</string>
+    <string name="register_success">Вы успешно зарегистрированны!</string>
+    <string name="reg_error">Возникла ошибка.</string>
+    <string name="fill_the_field">Заполните поле</string>
+
 </resources>

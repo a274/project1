@@ -50,18 +50,29 @@ public class RegisterActivity extends Activity {
         btnRegister.setOnClickListener(this::sendPOST);
     }
 
-    void printError(EditText editText) {
-        editText.setHintTextColor(Color.RED);
-        editText.setHint("Заполните поле");
+    // вывод ошибки о пустой строке
+    public void printError(EditText editText) {
+        editText.setHintTextColor(getResources().getColor(R.color.error));
+        editText.setHint(R.string.fill_the_field);
     }
-    public void sendPOST(View view) {
-        name = reg_name.getText().toString().trim();
-        surname = reg_surname.getText().toString().trim();
-        email = reg_email.getText().toString();
-        password = reg_password.getText().toString();
-        phonenumber = reg_phonenumber.getText().toString().trim();
-        address = reg_address.getText().toString().trim();
 
+    // обработка ответов с сервера о регистрации
+    public void processResponse(int resp){
+        if (resp == -2)  {
+            answer.setHint(R.string.been_registered);
+          //  Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+          //  startActivity(i);
+        }
+        else if (resp == -1) answer.setHint(R.string.reg_error);
+        else {
+            answer.setText(R.string.register_success);
+            Intent i = new Intent(RegisterActivity.this, MainWidgets.class);
+            startActivity(i);
+        }
+    }
+
+    //проверка пустой строки
+    public boolean isFieldEmpty () {
         boolean p = false;
         if (name.equals("")) {
             printError(reg_name);
@@ -87,7 +98,19 @@ public class RegisterActivity extends Activity {
             printError(reg_address);
             p = true;
         }
-        if (p) return;
+        return p;
+    }
+
+    //обработка нажатия конпки
+    public void sendPOST(View view) {
+        name = reg_name.getText().toString().trim();
+        surname = reg_surname.getText().toString().trim();
+        email = reg_email.getText().toString();
+        password = reg_password.getText().toString();
+        phonenumber = reg_phonenumber.getText().toString().trim();
+        address = reg_address.getText().toString().trim();
+
+        if (isFieldEmpty()) return;
         answer = findViewById(R.id.answer);
         new MyAsyncTask().execute("");
     }
@@ -108,31 +131,23 @@ public class RegisterActivity extends Activity {
 
             UserService userService = retrofit.create(UserService.class);
 
-            Call<User> userCall = userService
+            Call<Integer> userCall = userService
                     .register(name, surname, email, password, phonenumber, address);
-            userCall.enqueue(new Callback<User>() {
+            userCall.enqueue(new Callback<Integer>() {
                 @Override
-                public void onResponse(Call<User> call, Response<User> response) {
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
                     if (response.isSuccessful()) {
-                        User user = response.body();
-                        Log.v(LOG_TAG, "response " + user.getSurname()
-                                + " " + user.getName_()
-                                + " " + user.getEmail()
-                                + " "  + user.getPhoneNumber()
-                                + " " + user.getPassword());
-                        answer.setText("Вы успешно зарегистрированны!");
+                        processResponse(response.body());
+                        Log.v(LOG_TAG, "response " + response.body());
 
-                        Intent i = new Intent(RegisterActivity.this, MainWidgets.class);
-                        startActivity(i);
-                        
                     } else {
-                        answer.setText("Возникла ошибка.");
+                        answer.setHint(R.string.reg_error);
                         Log.e(LOG_TAG,"response code " + response.code());
                     }
                 }
 
                 @Override
-                public void onFailure(Call<User> call, Throwable t) {
+                public void onFailure(Call<Integer> call, Throwable t) {
                     Log.e(LOG_TAG,"failure " + t);
                 }
             });
