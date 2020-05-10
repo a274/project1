@@ -1,6 +1,7 @@
 package test.itschool.samsung.ru.eco_lavka;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,14 +49,44 @@ public class RegisterActivity extends Activity {
         btnRegister.setOnClickListener(this::sendPOST);
     }
 
+    void printError(EditText editText) {
+        editText.setHintTextColor(Color.RED);
+        editText.setHint("Заполните поле");
+    }
     public void sendPOST(View view) {
-        name = reg_name.getText().toString();
-        surname = reg_surname.getText().toString();
+        name = reg_name.getText().toString().trim();
+        surname = reg_surname.getText().toString().trim();
         email = reg_email.getText().toString();
         password = reg_password.getText().toString();
-        phonenumber = reg_phonenumber.getText().toString();
-        address = reg_address.getText().toString();
+        phonenumber = reg_phonenumber.getText().toString().trim();
+        address = reg_address.getText().toString().trim();
 
+        boolean p = false;
+        if (name.equals("")) {
+            printError(reg_name);
+            p = true;
+        }
+        if (surname.equals("")) {
+            printError(reg_surname);
+            p = true;
+        }
+        if (email.equals("")) {
+            printError(reg_email);
+            p = true;
+        }
+        if (password.equals("")) {
+            printError(reg_password);
+            p = true;
+        }
+        if (phonenumber.equals("")) {
+            printError(reg_phonenumber);
+            p = true;
+        }
+        if (address.equals("")) {
+            printError(reg_address);
+            p = true;
+        }
+        if (p) return;
         answer = findViewById(R.id.answer);
         new MyAsyncTask().execute("");
     }
@@ -90,6 +121,7 @@ public class RegisterActivity extends Activity {
                                 + " " + user.getPassword());
                         answer.setText("Вы успешно зарегистрированны!");
                     } else {
+                        answer.setText("Возникла ошибка.");
                         Log.e(LOG_TAG,"response code " + response.code());
                     }
                 }
