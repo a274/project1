@@ -40,7 +40,11 @@
             </intent-filter>
         </activity>
     <activity android:name=".Categories"
-        android:label="Menu categories"></activity>
+        android:label="Menu">
+        <intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 </application>
 
 </manifest>
