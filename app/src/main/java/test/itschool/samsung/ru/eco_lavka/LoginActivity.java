@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,6 +36,8 @@ public class LoginActivity extends Activity {
     private TextView answer;
     private String login, password;
     private EditText log, pass;
+    SharedPreferences sharedPreferences;
+    final String SAVED_ID = "ID";
     int id = 0;
     // -2 -> response hasn't come yet
     // -1 -> connection problems, wrong data
@@ -87,10 +90,12 @@ public class LoginActivity extends Activity {
                         sleep(3000);
                     } catch (InterruptedException e) {}
                 }
+                id = auth.resp;
                 if (auth.resp == -1 || auth.resp == 0) {
                     answer.setText(R.string.login_error);
                     auth.resp = -2;
                 } else {
+                    saveId();
                     Intent intent = new Intent(LoginActivity.this, MainWidgets.class);
                     startActivity(intent);
                 }
@@ -114,5 +119,13 @@ public class LoginActivity extends Activity {
             p = true;
         }
         return p;
+    }
+
+    void saveId() {
+        sharedPreferences = getSharedPreferences("user_setting", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(SAVED_ID, id);
+        editor.commit();
+        Log.d(LOG_TAG, " id: " + id);
     }
 }
