@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Auth extends Thread {
     private static String LOG_TAG = "MainActivity";
-    private final String baseUrl = "http://a274.sytes.net/php_server/";
+    private final String baseUrl = "https://server-a274.herokuapp.com/";
     public static int resp = -2;
     Account account;
 

@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterActivity extends Activity {
     private static String LOG_TAG = "MainActivity";
-    private final String baseUrl = "http://a274.sytes.net/php_server/";
+    private final String baseUrl = "https://server-a274.herokuapp.com/";
     private EditText reg_name, reg_surname, reg_email, reg_password, reg_address, reg_phonenumber;
     private String name, surname, email, password, phonenumber, address;
     private TextView answer;
