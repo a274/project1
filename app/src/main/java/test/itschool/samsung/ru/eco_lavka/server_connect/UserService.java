@@ -22,4 +22,7 @@ public interface UserService {
             @Query("id_") Integer user_id,
             @Query("field") String field,
             @Query("value_") String value);
+
+    @GET("makeOrder.php")
+    Call <Integer> makeOrder(@Query("order") Order order);
 }

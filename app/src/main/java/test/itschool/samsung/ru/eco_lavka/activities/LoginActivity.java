@@ -1,7 +1,6 @@
 package test.itschool.samsung.ru.eco_lavka.activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,14 +13,13 @@ import android.widget.TextView;
 import test.itschool.samsung.ru.eco_lavka.TextProcessing;
 import test.itschool.samsung.ru.eco_lavka.server_connect.Auth;
 import test.itschool.samsung.ru.eco_lavka.R;
-import test.itschool.samsung.ru.eco_lavka.server_connect.ServerConnecting;
 
 import static java.lang.Thread.sleep;
 
 
-public class LoginActivity extends Activity implements TextProcessing, ServerConnecting {
+public class LoginActivity extends Activity implements TextProcessing {
 
-    private String LOG_TAG = this.LOG_TAG();
+    private String LOG_TAG = "Login";
     private TextView answer;
     private String login, password;
     private EditText log, pass;

@@ -9,13 +9,12 @@ import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import test.itschool.samsung.ru.eco_lavka.server_connect.ServerConnecting;
 import test.itschool.samsung.ru.eco_lavka.server_connect.UserService;
 
-public class App extends Application implements ServerConnecting {
+public class App extends Application {
 
     public static App instance;
-
+    private static String URL = "https://server-a274.herokuapp.com/";
     private AppDatabase database;
 
     private UserService userService;
@@ -34,7 +33,7 @@ public class App extends Application implements ServerConnecting {
                 .create();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl(this.URL())
+                .baseUrl(URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

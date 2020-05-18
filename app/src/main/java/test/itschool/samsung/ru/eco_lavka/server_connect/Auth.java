@@ -2,18 +2,13 @@ package test.itschool.samsung.ru.eco_lavka.server_connect;
 
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
 
-public class Auth extends Thread implements ServerConnecting{
-    private String LOG_TAG = this.LOG_TAG();
+public class Auth extends Thread {
+    private String LOG_TAG = "Auth";
     public static int resp = -2;
     Account account;
 

@@ -16,11 +16,10 @@ import retrofit2.Response;
 import test.itschool.samsung.ru.eco_lavka.R;
 import test.itschool.samsung.ru.eco_lavka.TextProcessing;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
-import test.itschool.samsung.ru.eco_lavka.server_connect.ServerConnecting;
 import test.itschool.samsung.ru.eco_lavka.server_connect.UserService;
 
-public class RegisterActivity extends Activity implements ServerConnecting, TextProcessing {
-    private String LOG_TAG = this.LOG_TAG();
+public class RegisterActivity extends Activity implements TextProcessing {
+    private String LOG_TAG = "Register";
     private EditText rName, rSurname, rEmail, rPassword, rAddress, rPhoneNumber;
     private String name, surname, email, password, phone_number, address;
     private TextView answer;
