@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.server_connect;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

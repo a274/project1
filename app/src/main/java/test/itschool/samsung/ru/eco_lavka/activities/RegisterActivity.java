@@ -1,8 +1,7 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,8 +18,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import test.itschool.samsung.ru.eco_lavka.R;
+import test.itschool.samsung.ru.eco_lavka.TextProcessing;
+import test.itschool.samsung.ru.eco_lavka.server_connect.UserService;
 
-public class RegisterActivity extends Activity {
+public class RegisterActivity extends Activity implements TextProcessing {
     private static String LOG_TAG = "MainActivity";
     private final String baseUrl = "https://server-a274.herokuapp.com/";
     private EditText reg_name, reg_surname, reg_email, reg_password, reg_address, reg_phonenumber;
@@ -39,21 +41,13 @@ public class RegisterActivity extends Activity {
         reg_address = findViewById(R.id.reg_address);
         reg_phonenumber = findViewById(R.id.reg_mobilenumber);
 
-
         // LOGIN
         TextView loginScreen = findViewById(R.id.link_to_login);
         loginScreen.setOnClickListener(v -> finish());
 
-
         //REGISTER
         Button btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(this::sendPOST);
-    }
-
-    // вывод ошибки о пустой строке
-    public void printError(EditText editText) {
-        editText.setHintTextColor(getResources().getColor(R.color.error));
-        editText.setHint(R.string.fill_the_field);
     }
 
     // обработка ответов с сервера о регистрации
@@ -71,36 +65,6 @@ public class RegisterActivity extends Activity {
         }
     }
 
-    //проверка пустой строки
-    public boolean isFieldEmpty () {
-        boolean p = false;
-        if (name.equals("")) {
-            printError(reg_name);
-            p = true;
-        }
-        if (surname.equals("")) {
-            printError(reg_surname);
-            p = true;
-        }
-        if (email.equals("")) {
-            printError(reg_email);
-            p = true;
-        }
-        if (password.equals("")) {
-            printError(reg_password);
-            p = true;
-        }
-        if (phonenumber.equals("")) {
-            printError(reg_phonenumber);
-            p = true;
-        }
-        if (address.equals("")) {
-            printError(reg_address);
-            p = true;
-        }
-        return p;
-    }
-
     //обработка нажатия конпки
     public void sendPOST(View view) {
         name = reg_name.getText().toString().trim();
@@ -110,7 +74,9 @@ public class RegisterActivity extends Activity {
         phonenumber = reg_phonenumber.getText().toString().trim();
         address = reg_address.getText().toString().trim();
 
-        if (isFieldEmpty()) return;
+        if (isFieldEmpty(this, reg_name,
+                reg_surname, reg_email, reg_password,
+                reg_phonenumber, reg_address)) return;
         answer = findViewById(R.id.answer);
         new MyAsyncTask().execute("");
     }

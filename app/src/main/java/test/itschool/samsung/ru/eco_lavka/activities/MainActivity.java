@@ -1,12 +1,12 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+
+import test.itschool.samsung.ru.eco_lavka.R;
 
 import static java.lang.Thread.sleep;
 

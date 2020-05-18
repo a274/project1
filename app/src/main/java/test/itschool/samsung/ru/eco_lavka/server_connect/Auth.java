@@ -1,9 +1,6 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.server_connect;
 
-import android.accounts.Account;
-import android.content.Intent;
 import android.util.Log;
-import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,7 +27,7 @@ public class Auth extends Thread {
         }
     }
 
-    Auth(String login, String password) {
+    public Auth(String login, String password) {
         account = new Account(login, password);
     }
 
