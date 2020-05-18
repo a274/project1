@@ -87,7 +87,9 @@
                 android:id="@+id/answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FD0000" />
+                android:textColor="#FD0000"
+                android:textColorHint="#0b84aa"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/link_to_register"

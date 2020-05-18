@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.activities;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import test.itschool.samsung.ru.eco_lavka.AdapterMenu;
+import test.itschool.samsung.ru.eco_lavka.R;
 
 public class Categories extends Activity {
     final  String[] categories = new String[] {"Молоко", "Мясо", "Овощи"};
@@ -20,7 +23,7 @@ public class Categories extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_categories);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_categories);
+        mRecyclerView = findViewById(R.id.recycler_categories);
 
         mRecyclerView.setHasFixedSize(true);
 

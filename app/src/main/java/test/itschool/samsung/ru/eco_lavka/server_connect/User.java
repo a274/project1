@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.server_connect;
 
 public class User {
     private String name_;
