@@ -105,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dip"
                 android:layout_marginBottom="20dip"
+                android:inputType="number"
                 android:backgroundTint="#AAE684"
                 android:singleLine="true"
                 android:textColor="#333232" />
@@ -137,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dip"
                 android:backgroundTint="#AAE684"
-                android:password="true"
+                android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="#333232" />
             <!-- Register Button -->
@@ -152,7 +153,8 @@
                 android:id="@+id/answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4CAF50" />
+                android:textColor="#4CAF50"
+                android:textColorHint="@color/error" />
             <!-- Link to Login Screen -->
             <TextView
                 android:id="@+id/link_to_login"
