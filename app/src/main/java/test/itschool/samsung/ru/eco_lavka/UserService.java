@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka.server_connect;
+package test.itschool.samsung.ru.eco_lavka;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -22,7 +22,4 @@ public interface UserService {
             @Query("id_") Integer user_id,
             @Query("field") String field,
             @Query("value_") String value);
-
-    @GET("makeOrder.php")
-    Call <Integer> makeOrder(@Query("order") Order order);
 }
