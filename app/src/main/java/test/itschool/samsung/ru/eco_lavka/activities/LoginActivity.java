@@ -14,13 +14,14 @@ import android.widget.TextView;
 import test.itschool.samsung.ru.eco_lavka.TextProcessing;
 import test.itschool.samsung.ru.eco_lavka.server_connect.Auth;
 import test.itschool.samsung.ru.eco_lavka.R;
+import test.itschool.samsung.ru.eco_lavka.server_connect.ServerConnecting;
 
 import static java.lang.Thread.sleep;
 
 
-public class LoginActivity extends Activity implements TextProcessing {
+public class LoginActivity extends Activity implements TextProcessing, ServerConnecting {
 
-    private static String LOG_TAG = "MainActivity";
+    private String LOG_TAG = this.LOG_TAG();
     private TextView answer;
     private String login, password;
     private EditText log, pass;

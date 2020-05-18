@@ -10,10 +10,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import test.itschool.samsung.ru.eco_lavka.cart.App;
 
-public class Auth extends Thread {
-    private static String LOG_TAG = "MainActivity";
-    private final String baseUrl = "https://server-a274.herokuapp.com/";
+public class Auth extends Thread implements ServerConnecting{
+    private String LOG_TAG = this.LOG_TAG();
     public static int resp = -2;
     Account account;
 
@@ -33,17 +33,9 @@ public class Auth extends Thread {
 
     @Override
     public void run() {
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
+        UserService userService = App.getInstance().getUserService();
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create(gson))
-                    .build();
-
-            UserService userService = retrofit.create(UserService.class);
-            Call<Integer> userCall = userService.login(account.login, account.password);
+        Call<Integer> userCall = userService.login(account.login, account.password);
 
             userCall.enqueue(new Callback<Integer>() {
                 @Override

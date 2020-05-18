@@ -15,13 +15,18 @@ public interface TextProcessing {
     public default boolean isFieldEmpty (Context context, EditText...field) {
         boolean p = false;
         for (int i = 0; i < field.length; i++) {
-            String value = field[i].getText().toString().trim();
+            String value = getValue(field[i]);
             if (value.equals("")) {
                 printError(context, field[i]);
                 p = true;
             }
         }
         return p;
+    }
+
+    public default String getValue (EditText field) {
+        String value = field.getText().toString().trim();
+        return value;
     }
 
 }

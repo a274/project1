@@ -23,7 +23,7 @@ public class Categories extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_categories);
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_categories);
+        mRecyclerView = findViewById(R.id.recycler_categories);
 
         mRecyclerView.setHasFixedSize(true);
 

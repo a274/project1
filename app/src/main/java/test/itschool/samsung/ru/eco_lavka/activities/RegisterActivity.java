@@ -10,23 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import test.itschool.samsung.ru.eco_lavka.R;
 import test.itschool.samsung.ru.eco_lavka.TextProcessing;
+import test.itschool.samsung.ru.eco_lavka.cart.App;
+import test.itschool.samsung.ru.eco_lavka.server_connect.ServerConnecting;
 import test.itschool.samsung.ru.eco_lavka.server_connect.UserService;
 
-public class RegisterActivity extends Activity implements TextProcessing {
-    private static String LOG_TAG = "MainActivity";
-    private final String baseUrl = "https://server-a274.herokuapp.com/";
-    private EditText reg_name, reg_surname, reg_email, reg_password, reg_address, reg_phonenumber;
-    private String name, surname, email, password, phonenumber, address;
+public class RegisterActivity extends Activity implements ServerConnecting, TextProcessing {
+    private String LOG_TAG = this.LOG_TAG();
+    private EditText rName, rSurname, rEmail, rPassword, rAddress, rPhoneNumber;
+    private String name, surname, email, password, phone_number, address;
     private TextView answer;
 
     @Override
@@ -34,12 +30,12 @@ public class RegisterActivity extends Activity implements TextProcessing {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
-        reg_name = findViewById(R.id.reg_name);
-        reg_surname = findViewById(R.id.reg_surname);
-        reg_email = findViewById(R.id.reg_email);
-        reg_password = findViewById(R.id.reg_password);
-        reg_address = findViewById(R.id.reg_address);
-        reg_phonenumber = findViewById(R.id.reg_mobilenumber);
+        rName = findViewById(R.id.reg_name);
+        rSurname = findViewById(R.id.reg_surname);
+        rEmail = findViewById(R.id.reg_email);
+        rPassword = findViewById(R.id.reg_password);
+        rAddress = findViewById(R.id.reg_address);
+        rPhoneNumber = findViewById(R.id.reg_mobilenumber);
 
         // LOGIN
         TextView loginScreen = findViewById(R.id.link_to_login);
@@ -67,16 +63,15 @@ public class RegisterActivity extends Activity implements TextProcessing {
 
     //обработка нажатия конпки
     public void sendPOST(View view) {
-        name = reg_name.getText().toString().trim();
-        surname = reg_surname.getText().toString().trim();
-        email = reg_email.getText().toString();
-        password = reg_password.getText().toString();
-        phonenumber = reg_phonenumber.getText().toString().trim();
-        address = reg_address.getText().toString().trim();
+        name = getValue(rName);
+        surname = getValue(rSurname);
+        email = getValue(rEmail);
+        password = getValue(rPassword);
+        phone_number = getValue(rPhoneNumber);
+        address = getValue(rAddress);
 
-        if (isFieldEmpty(this, reg_name,
-                reg_surname, reg_email, reg_password,
-                reg_phonenumber, reg_address)) return;
+        if (isFieldEmpty(this, rName, rSurname, rEmail,
+                rPassword, rPhoneNumber, rAddress)) return;
         answer = findViewById(R.id.answer);
         new MyAsyncTask().execute("");
     }
@@ -86,19 +81,10 @@ public class RegisterActivity extends Activity implements TextProcessing {
         @Override
         protected String doInBackground(String... params) {
 
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
-
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create(gson))
-                    .build();
-
-            UserService userService = retrofit.create(UserService.class);
+            UserService userService = App.getInstance().getUserService();
 
             Call<Integer> userCall = userService
-                    .register(name, surname, email, password, phonenumber, address);
+                    .register(name, surname, email, password, phone_number, address);
             userCall.enqueue(new Callback<Integer>() {
                 @Override
                 public void onResponse(Call<Integer> call, Response<Integer> response) {
