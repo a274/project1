@@ -1,20 +1,18 @@
 package test.itschool.samsung.ru.eco_lavka.cart;
 
-public class AddProduct extends Thread {
-    public CartDao cartDao;
+import android.util.Log;
 
-    public AddProduct(CartDao cartDao) {
-        this.cartDao = cartDao;
-    }
+public class AddProduct extends Thread {
     @Override
     public void run() {
         synchronized (this) {
-            Cart cart = new Cart();
-            cart.productId = 1;
-            cart.productAmount = 1;
+            ProductDao productDao = App.getInstance().getCartDao();
+            Product product = new Product();
+            product.productId = 1;
+            product.productAmount = 1;
 
-            cartDao.insert(cart);
+            productDao.insert(product);
+            Log.v("Product Add", "success");
         }
-
     }
 }

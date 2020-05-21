@@ -2,29 +2,29 @@ package test.itschool.samsung.ru.eco_lavka.server_connect;
 
 import android.util.Log;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
-import test.itschool.samsung.ru.eco_lavka.cart.Cart;
+import test.itschool.samsung.ru.eco_lavka.cart.Product;
 
 public class Order extends Thread {
     private int userId;
-    private ArrayList<Cart> cart;
+    private List<Product> product;
 
     private static String LOG_TAG = "Order info";
 
-    Order(int userId) {
+    public Order(int userId, List<Product> product) {
         this.userId = userId;
-        this.cart = new ArrayList<>();
+        this.product = product;
+        //this.product = new ArrayList<>();
     }
 
     @Override
     public void run() {
         UserService userService = App.getInstance().getUserService();
-
         Call<Integer> userCall = userService.makeOrder(this);
 
         userCall.enqueue(new Callback<Integer>() {
