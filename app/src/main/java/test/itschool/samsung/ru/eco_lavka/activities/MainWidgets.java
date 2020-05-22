@@ -5,12 +5,11 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import test.itschool.samsung.ru.eco_lavka.R;
-import test.itschool.samsung.ru.eco_lavka.cart.AddProduct;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
 import test.itschool.samsung.ru.eco_lavka.cart.AppDatabase;
+import test.itschool.samsung.ru.eco_lavka.cart.Base;
 import test.itschool.samsung.ru.eco_lavka.cart.CartDao;
 
 public class MainWidgets extends AppCompatActivity {
@@ -33,7 +32,13 @@ public class MainWidgets extends AppCompatActivity {
 
         Catalog.setOnClickListener(v -> {
             Intent intent=new Intent(MainWidgets.this, Categories.class);
-           startActivity(intent);
+            startActivity(intent);
+        });
+        ImageButton cartButton = findViewById(R.id.cartButton);
+
+        cartButton.setOnClickListener(v -> {
+            Intent intent=new Intent(MainWidgets.this, Base.class);
+            startActivity(intent);
         });
     }
 

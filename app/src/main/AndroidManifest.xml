@@ -38,8 +38,9 @@
         </activity>
 
         <!--  Entry for RegisterActivity.class -->
-        <activity android:name=".activities.RegisterActivity"
-            android:label="Register New Account"></activity>
+    <activity
+        android:name=".activities.RegisterActivity"
+        android:label="Register New Account" />
 
         <activity android:name=".activities.MainWidgets"
             android:label="Main widgets">
@@ -54,6 +55,16 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
+    <activity
+        android:name=".cart.ProductActivity"
+        android:label="Product">
+        <intent-filter>
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name=".cart.CartActivity"
+        android:label="@string/cart" />
 </application>
 </manifest>

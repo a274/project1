@@ -1,0 +1,51 @@
+package test.itschool.samsung.ru.eco_lavka.cart;
+//Это объект который у нас описывает как будет выглядить продукт — айди, имя, описание, цена и картинка.
+public class ProductModel {
+
+    private Long id;
+    private Integer price;
+    private String image;
+    private String title;
+    private String description;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+

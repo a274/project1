@@ -5,4 +5,9 @@
     <string name="reg_error">Возникла ошибка.</string>
     <string name="fill_the_field">Заполните поле</string>
     <string name="login_error">Логин или пароль введен неверно.</string>
+    <string name="cart">Корзина</string>
+    <string name="buy">Купить</string>
+    <string name="rub_format">Р</string>
+    <string name="_2_5">2,5% жирности</string>
+    <string name="milk">Молоко</string>
 </resources>
