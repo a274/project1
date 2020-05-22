@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import test.itschool.samsung.ru.eco_lavka.R;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
 import test.itschool.samsung.ru.eco_lavka.cart.AppDatabase;
-import test.itschool.samsung.ru.eco_lavka.cart.Base;
+import test.itschool.samsung.ru.eco_lavka.cart.CartActivity;
 import test.itschool.samsung.ru.eco_lavka.cart.CartDao;
 
 public class MainWidgets extends AppCompatActivity {
@@ -34,10 +34,10 @@ public class MainWidgets extends AppCompatActivity {
             Intent intent=new Intent(MainWidgets.this, Categories.class);
             startActivity(intent);
         });
-        ImageButton cartButton = findViewById(R.id.cartButton);
 
+        ImageButton cartButton = findViewById(R.id.cartButton);
         cartButton.setOnClickListener(v -> {
-            Intent intent=new Intent(MainWidgets.this, Base.class);
+            Intent intent=new Intent(MainWidgets.this, CartActivity.class);
             startActivity(intent);
         });
     }
