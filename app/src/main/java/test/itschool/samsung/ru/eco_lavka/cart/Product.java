@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Cart {
+public class Product {
 
     @PrimaryKey(autoGenerate = true)
     public long id;

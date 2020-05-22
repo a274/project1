@@ -57,6 +57,7 @@
         </intent-filter>
     </activity>
 
+<<<<<<< HEAD
     <activity
         android:name=".cart.ProductActivity"
         android:label="Product">
@@ -70,5 +71,13 @@
         android:name=".cart.CartActivity"
         android:label="@string/cart" />
 
+=======
+    <activity android:name=".activities.Temp"
+        android:label="order">
+        <intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+>>>>>>> master
 </application>
 </manifest>
