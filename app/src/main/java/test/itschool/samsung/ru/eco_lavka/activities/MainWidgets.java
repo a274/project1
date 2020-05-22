@@ -10,19 +10,14 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import test.itschool.samsung.ru.eco_lavka.R;
-<<<<<<< HEAD
 import test.itschool.samsung.ru.eco_lavka.cart.App;
 import test.itschool.samsung.ru.eco_lavka.cart.AppDatabase;
 import test.itschool.samsung.ru.eco_lavka.cart.CartActivity;
-import test.itschool.samsung.ru.eco_lavka.cart.CartDao;
-=======
 import test.itschool.samsung.ru.eco_lavka.cart.AddProduct;
 import test.itschool.samsung.ru.eco_lavka.cart.GetCart;
 
 import static test.itschool.samsung.ru.eco_lavka.R.id.imageView;
 import static test.itschool.samsung.ru.eco_lavka.R.layout.main_widgets;
-
->>>>>>> master
 
 public class MainWidgets extends AppCompatActivity {
     private ImageView buttton;
@@ -51,15 +46,13 @@ public class MainWidgets extends AppCompatActivity {
         Catalog.setOnClickListener(v -> {
             Intent intent=new Intent(MainWidgets.this, Categories.class);
             startActivity(intent);
-<<<<<<< HEAD
         });
 
         ImageButton cartButton = findViewById(R.id.cartButton);
         cartButton.setOnClickListener(v -> {
             Intent intent=new Intent(MainWidgets.this, CartActivity.class);
             startActivity(intent);
-=======
->>>>>>> master
+
         });
     }
 
