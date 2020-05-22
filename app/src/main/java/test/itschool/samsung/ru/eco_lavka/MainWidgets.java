@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka.activities;
+package test.itschool.samsung.ru.eco_lavka;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD:app/src/main/java/test/itschool/samsung/ru/eco_lavka/activities/MainWidgets.java
 
 import test.itschool.samsung.ru.eco_lavka.R;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
@@ -18,6 +19,8 @@ import test.itschool.samsung.ru.eco_lavka.cart.GetCart;
 
 import static test.itschool.samsung.ru.eco_lavka.R.id.imageView;
 import static test.itschool.samsung.ru.eco_lavka.R.layout.main_widgets;
+=======
+>>>>>>> develop:app/src/main/java/test/itschool/samsung/ru/eco_lavka/MainWidgets.java
 
 public class MainWidgets extends AppCompatActivity {
     private ImageView buttton;
@@ -35,6 +38,7 @@ public class MainWidgets extends AppCompatActivity {
             startActivity(intent);
         });
 
+<<<<<<< HEAD:app/src/main/java/test/itschool/samsung/ru/eco_lavka/activities/MainWidgets.java
 
 
         sharedPreferences = getSharedPreferences("user_setting", MODE_PRIVATE);
@@ -42,12 +46,16 @@ public class MainWidgets extends AppCompatActivity {
 
 
         ImageButton Catalog = findViewById(R.id.menuButton);
+=======
+        ImageButton Catalog = (ImageButton) findViewById(R.id.menuButton);
+>>>>>>> develop:app/src/main/java/test/itschool/samsung/ru/eco_lavka/MainWidgets.java
 
         Catalog.setOnClickListener(v -> {
             Intent intent=new Intent(MainWidgets.this, Categories.class);
             startActivity(intent);
         });
 
+<<<<<<< HEAD:app/src/main/java/test/itschool/samsung/ru/eco_lavka/activities/MainWidgets.java
         ImageButton cartButton = findViewById(R.id.cartButton);
         cartButton.setOnClickListener(v -> {
             Intent intent=new Intent(MainWidgets.this, CartActivity.class);
@@ -56,4 +64,6 @@ public class MainWidgets extends AppCompatActivity {
         });
     }
 
+=======
+>>>>>>> develop:app/src/main/java/test/itschool/samsung/ru/eco_lavka/MainWidgets.java
 }
