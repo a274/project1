@@ -16,6 +16,9 @@ public interface ProductDao {
     @Query("SELECT * FROM Product WHERE productId = :id")
     Product getById(long id);
 
+    @Query("DELETE FROM Product")
+    void deleteAll();
+
     @Insert
     void insert(Product product);
 
@@ -24,4 +27,6 @@ public interface ProductDao {
 
     @Delete
     void delete(Product product);
+
+
 }

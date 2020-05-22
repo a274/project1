@@ -2,18 +2,21 @@ package test.itschool.samsung.ru.eco_lavka.cart;
 
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class GetCart implements Runnable {
+public class GetCart extends Thread {
+
+    private List<Product> products = new ArrayList<>();
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
     @Override
     public void run() {
-        // CART CREATING
         ProductDao productDao = App.getInstance().getCartDao();
-
-        // BUTTON ADD PRODUCT
-        List <Product> products = productDao.getAll();
-        for (int i = 0; i < productDao.getAll().size(); i++) {
-            Log.v("cart", products.get(i).productAmount + " ");
-        }
+        products = productDao.getAll();
+        Log.v("cart info", products.size() + " ");
     }
 }

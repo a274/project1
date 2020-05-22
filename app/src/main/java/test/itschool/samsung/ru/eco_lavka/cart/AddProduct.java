@@ -5,14 +5,12 @@ import android.util.Log;
 public class AddProduct extends Thread {
     @Override
     public void run() {
-        synchronized (this) {
-            ProductDao productDao = App.getInstance().getCartDao();
-            Product product = new Product();
-            product.productId = 1;
-            product.productAmount = 1;
+        ProductDao productDao = App.getInstance().getCartDao();
+        Product product = new Product();
+        product.productId = 1;
+        product.productAmount = 1;
 
-            productDao.insert(product);
-            Log.v("Product Add", "success");
-        }
+        productDao.insert(product);
+        Log.v("Product Add", "success");
     }
 }

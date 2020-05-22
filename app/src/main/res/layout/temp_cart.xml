@@ -5,27 +5,29 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:gravity="bottom">
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="638dp"
-        android:layout_gravity="top">
-
-
-    </ListView>
+    android:layout_gravity="bottom">
 
     <Button
         android:id="@+id/addProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:text="Add Product" />
 
     <Button
         android:id="@+id/order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order"
-        android:layout_gravity="bottom"/>
+        android:layout_gravity="bottom"
+        android:text="Order" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top">
+
+
+    </ListView>
 
 </LinearLayout>
