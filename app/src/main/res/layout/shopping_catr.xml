@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:backgroundTint="@color/white"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -32,8 +32,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="254dp"
                 android:layout_height="wrap_content"
-                android:hint="hint"
-                android:text="Корзина"
+                android:text="@string/cart"
                 android:textAlignment="center"
                 android:textColor="@color/text"
                 android:textSize="30sp"
@@ -43,14 +42,18 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scroll_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/head_search">
+
+    </ScrollView>
+    <fragment
+        android:id="@+id/cart"
+        android:layout_below="@+id/scroll_cart"
+        android:name="test.itschool.samsung.ru.eco_lavka.cart.CartFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
-        <fragment
-            android:id="@+id/cart"
-            android:name="test.itschool.samsung.ru.eco_lavka.cart.CartFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/fragment_cart" />
-    </ScrollView>
+        tools:layout="@layout/fragment_cart" />
 </RelativeLayout>

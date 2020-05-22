@@ -48,6 +48,10 @@ public class App extends Application {
         return database;
     }
 
+    public ProductDao getCartDao() {
+        return database.CartDao();
+    }
+
     public Gson getGson() {
         return gson;
     }
