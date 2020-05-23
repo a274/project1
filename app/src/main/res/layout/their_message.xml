@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:clipToPadding="false"
     android:paddingVertical="10dp"
+    android:id="@+id/chat_their_message"
     android:paddingLeft="15dp"
     android:paddingRight="60dp">
 
