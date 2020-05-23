@@ -2,28 +2,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clipToPadding="false"
     android:paddingVertical="10dp"
     android:paddingLeft="15dp"
-    android:paddingRight="60dp"
-    android:clipToPadding="false">
+    android:paddingRight="60dp">
 
     <View
         android:id="@+id/avatar"
-        android:layout_alignParentLeft="true"
-        android:scaleType="centerInside"
-        android:background="@drawable/circle"
         android:layout_width="34dp"
-        android:layout_height="34dp" />
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/circle"
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/name"
-        android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/avatar"
-        android:layout_alignTop="@+id/avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/avatar"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/avatar"
         android:paddingBottom="4dp"
-        android:text="Rose"/>
+        android:text="Rose" />
+
+    <TextView
+        android:id="@+id/message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/message_body"
+        android:layout_alignBottom="@id/message_body"
+        android:allowUndo="false"
+        android:text="20.00"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/message_body"
@@ -38,4 +48,7 @@
         android:text="Здравствуйте!"
         android:textColor="#040303"
         android:textSize="18dp" />
+
+
+
 </RelativeLayout>

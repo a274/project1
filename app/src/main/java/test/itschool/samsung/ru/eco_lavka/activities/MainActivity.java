@@ -7,19 +7,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import test.itschool.samsung.ru.eco_lavka.R;
-
-import static java.lang.Thread.sleep;
-
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     final String SAVED_ID = "ID";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("user_setting", MODE_PRIVATE);
-        Integer id = sharedPreferences.getInt(SAVED_ID, 0);
+        int id = sharedPreferences.getInt(SAVED_ID, 0);
         synchronized (this) {
             try {
                 Thread.sleep(2000);
@@ -30,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
             if (id > 0) {
                 Intent intent = new Intent(MainActivity.this, MainWidgets.class);
                 startActivity(intent);
-            }
-            else {
+            } else {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }

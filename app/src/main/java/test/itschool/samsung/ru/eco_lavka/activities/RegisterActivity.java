@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,6 +19,8 @@ import test.itschool.samsung.ru.eco_lavka.R;
 import test.itschool.samsung.ru.eco_lavka.TextProcessing;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
 import test.itschool.samsung.ru.eco_lavka.server_connect.UserService;
+
+import static java.lang.Thread.sleep;
 
 public class RegisterActivity extends Activity implements TextProcessing {
     private String LOG_TAG = "Register";
@@ -72,6 +76,7 @@ public class RegisterActivity extends Activity implements TextProcessing {
         if (isFieldEmpty(this, rName, rSurname, rEmail,
                 rPassword, rPhoneNumber, rAddress)) return;
         answer = findViewById(R.id.answer);
+
         new MyAsyncTask().execute("");
     }
 
@@ -84,6 +89,7 @@ public class RegisterActivity extends Activity implements TextProcessing {
 
             Call<Integer> userCall = userService
                     .register(name, surname, email, password, phone_number, address);
+
             userCall.enqueue(new Callback<Integer>() {
                 @Override
                 public void onResponse(Call<Integer> call, Response<Integer> response) {
@@ -104,6 +110,5 @@ public class RegisterActivity extends Activity implements TextProcessing {
             });
             return null;
         }
-
     }
 }
