@@ -1,5 +1,6 @@
 package test.itschool.samsung.ru.eco_lavka.cart;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +18,7 @@ public abstract class Base {
 
     public abstract int getViewId();
 
-    public abstract class BaseActivity extends AppCompatActivity {
+    public abstract class BaseActivity extends Activity {
 
         private TextView textCartItemCount;
 

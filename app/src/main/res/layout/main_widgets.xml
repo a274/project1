@@ -53,7 +53,7 @@
                 android:contextClickable="true"
                 android:iconifiedByDefault="false"
                 android:queryBackground="@color/white"
-                android:queryHint="Search here"
+                android:queryHint="Поиск"
                 android:searchIcon="@android:drawable/ic_search_category_default">
 
             </SearchView>

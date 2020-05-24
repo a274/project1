@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <string-array name="categories">
+
+        <item>@string/milk</item>
+        <item>Мясо</item>
+        <item>Мясные полуфабрикаты</item>
+        <item>Мёд</item>
+        <item>Вода</item>
+        <item>Овощи</item>
+        <item>Овощи</item>
+
+    </string-array>
+</resources>

@@ -81,6 +81,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
+                android:backgroundTint="@color/light_green"
+                android:textColor="@color/text"
                 android:text="Login" />
             <!-- Link to Registration Screen -->
             <TextView
@@ -88,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FD0000"
-                android:textColorHint="#0b84aa"
+
                 android:textSize="18sp" />
 
             <TextView
@@ -99,7 +101,7 @@
                 android:layout_marginBottom="40dip"
                 android:gravity="center"
                 android:text="New account? Register here"
-                android:textColor="#0b84aa"
+                android:textColor="@color/text"
                 android:textSize="20dip" />
 
         </LinearLayout>

@@ -2,54 +2,57 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
-<LinearLayout
-    android:id="@+id/head_search"
-    android:layout_width="match_parent"
-    android:layout_height="91dp"
-    android:layout_alignParentTop="true"
-    android:background="@drawable/header_gradient"
-    android:elevation="5dp"
-    android:orientation="horizontal"
-    android:paddingTop="5dip">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="67dp"
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/logo" />
-
-    <SearchView
-        android:id="@+id/search_view"
-        style="@android:style/Widget.Material.Light.SearchView"
-        android:layout_width="250dp"
-        android:layout_height="67dp"
-        android:layout_margin="10dp"
-        android:background="@color/white"
-        android:gravity="center|start|center_horizontal"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search here">
-
-    </SearchView>
-
-
-</LinearLayout>
-
-    <ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/head_search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/head_search"
-        android:background="@color/white">
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header_gradient"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dip">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_categories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <SearchView
+            android:id="@+id/search_view"
+            style="@android:style/Widget.Material.Light.SearchView"
+            android:layout_width="281dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"
+            android:contextClickable="true"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@color/white"
+            android:queryHint="Поиск"
+            android:searchIcon="@android:drawable/ic_search_category_default">
 
-    </ScrollView>
+        </SearchView>
+
+        <ImageButton
+            android:id="@+id/cartButton"
+            android:layout_width="65dp"
+            android:layout_height="61dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:elevation="10dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/cart" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/categories"
+        android:layout_below="@+id/head_search"
+        android:layout_above="@+id/lower_search"
+        />
 
     <LinearLayout
         android:id="@+id/lower_search"
