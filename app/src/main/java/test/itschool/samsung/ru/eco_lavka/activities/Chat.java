@@ -10,11 +10,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.database.FirebaseListAdapter;
-import com.firebase.ui.database.FirebaseListOptions;
+//import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
@@ -40,27 +41,28 @@ public class Chat extends AppCompatActivity {
             public void onClick(View v) {
                 EditText textField = findViewById(R.id.editTextChat);
                 if (textField.getText().toString() == "") return;
-                FirebaseDatabase.getInstance().getReference().push().setValue(
-                        new Message1("Rose", textField.getText().toString()));
+                FirebaseDatabase.getInstance().getReference().child("chats").push().setValue(
+                        new Message1("Продавец", textField.getText().toString()));
+
                 textField.setText("");
-                Toast.makeText(Chat.this, "send", Toast.LENGTH_SHORT).show();
             }
         });
         displayAllMessages();
     }
 
     private void displayAllMessages() {
-        Query query = FirebaseDatabase.getInstance().getReference().child("chats");
+      /*  Query query = FirebaseDatabase.getInstance().getReference().child("chats");
         FirebaseListOptions<Message1> options = new FirebaseListOptions.Builder<Message1>()
                 .setQuery(query, Message1.class)
                 .setLayout(R.layout.their_message)
                 .build();
-
+*/
         ListView listMessages = findViewById(R.id.messages_view);
-        adapter = new FirebaseListAdapter<Message1>(options) {
+        adapter = new FirebaseListAdapter<Message1>( this, Message1.class, R.layout.their_message, FirebaseDatabase.getInstance().getReference().child("chats")) {
             @Override
             protected void populateView(View v, Message1 model, int position) {
                 TextView user, text_message, message_time;
+
                 user = v.findViewById(R.id.name);
                 text_message = v.findViewById(R.id.message_body);
                 message_time = v.findViewById(R.id.message_time);
