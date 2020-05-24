@@ -58,16 +58,16 @@ public class Chat extends AppCompatActivity {
                 .build();
 */
         ListView listMessages = findViewById(R.id.messages_view);
-        adapter = new FirebaseListAdapter<Message1>( this, Message1.class, R.layout.their_message, FirebaseDatabase.getInstance().getReference().child("chats")) {
+        adapter = new FirebaseListAdapter<Message1>( this, Message1.class, R.layout.my_message, FirebaseDatabase.getInstance().getReference().child("chats")) {
             @Override
             protected void populateView(View v, Message1 model, int position) {
                 TextView user, text_message, message_time;
 
-                user = v.findViewById(R.id.name);
+               // user = v.findViewById(R.id.name);
                 text_message = v.findViewById(R.id.message_body);
                 message_time = v.findViewById(R.id.message_time);
 
-                user.setText(model.getUserName());
+               // user.setText(model.getUserName());
                 text_message.setText(model.getTextMessage());
                 message_time.setText(DateFormat.format("HH:mm", model.getMessageTime()));
             }
