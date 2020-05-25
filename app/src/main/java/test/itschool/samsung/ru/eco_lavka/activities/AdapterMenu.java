@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.activities;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import test.itschool.samsung.ru.eco_lavka.R;
 
 public class AdapterMenu extends RecyclerView.Adapter<AdapterMenu.ViewHolder> {
 private String[] categories1;

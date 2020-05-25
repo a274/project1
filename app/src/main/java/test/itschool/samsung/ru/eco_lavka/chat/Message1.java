@@ -1,4 +1,4 @@
-package test.itschool.samsung.ru.eco_lavka;
+package test.itschool.samsung.ru.eco_lavka.chat;
 
 import java.util.Date;
 

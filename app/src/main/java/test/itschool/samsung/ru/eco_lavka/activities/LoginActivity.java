@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import test.itschool.samsung.ru.eco_lavka.TextProcessing;
+import test.itschool.samsung.ru.eco_lavka.server_connect.TextProcessing;
 import test.itschool.samsung.ru.eco_lavka.server_connect.Auth;
 import test.itschool.samsung.ru.eco_lavka.R;
 
