@@ -67,7 +67,7 @@ public class MainWidgets extends AppCompatActivity {
         });
         cart = findViewById(R.id.cartButton);
         cart.setOnClickListener(v -> {
-            Intent intent=new Intent(MainWidgets.this, CartActivity.class);
+            Intent intent=new Intent(MainWidgets.this, CartActiv.class);
             startActivity(intent);
         });
     }

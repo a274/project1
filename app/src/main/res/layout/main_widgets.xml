@@ -60,14 +60,14 @@
 
             <ImageButton
                 android:id="@+id/cartButton"
-                android:layout_width="4dp"
+                android:layout_width="50dp"
                 android:layout_height="61dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:elevation="10dp"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/cart" />
+                android:src="@drawable/cart" />
 
 
         </LinearLayout>

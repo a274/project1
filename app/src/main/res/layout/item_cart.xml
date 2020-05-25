@@ -14,7 +14,8 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        android:src="@drawable/cucumber"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/milk"
+            android:text="Огурец"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -80,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="price"
+                android:text="30 Р"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />

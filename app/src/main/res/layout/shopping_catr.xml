@@ -32,6 +32,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="254dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
                 android:text="@string/cart"
                 android:textAlignment="center"
                 android:textColor="@color/text"
@@ -44,16 +45,17 @@
     <ScrollView
         android:id="@+id/scroll_cart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#FFFFFF"
         android:layout_below="@+id/head_search">
 
     </ScrollView>
+
     <fragment
         android:id="@+id/cart"
-        android:layout_below="@+id/scroll_cart"
         android:name="test.itschool.samsung.ru.eco_lavka.cart.CartFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         tools:layout="@layout/fragment_cart" />
 </RelativeLayout>

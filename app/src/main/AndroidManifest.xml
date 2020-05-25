@@ -61,14 +61,14 @@
             </intent-filter>
         </activity>
 
-        <activity
+        <!--<activity
             android:name=".cart.ProductActivity"
             android:label="Product">
             <intent-filter>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>-->
 
         <activity
             android:name=".activities.Chat"
@@ -78,19 +78,33 @@
             </intent-filter>
         </activity>
 
-        <activity
+        <!--<activity
             android:name=".cart.CartActivity"
             android:label="cart">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>-->
 
         <activity
             android:name=".activities.Temp"
             android:label="order">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.MenuVag"
+            android:label="Vag">
+            <intent-filter>
+                <category android:name="android.intent.canegory.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.CartActiv"
+            android:label="@string/cart">
+            <intent-filter>
+                <category android:name="android.intent.canegory.LAUNCHER"/>
             </intent-filter>
         </activity>
 
