@@ -8,5 +8,7 @@ public class ProductActivity extends Base {
         return R.layout.activity_product;
     }
 
-    public void onCreateView() { }
+    public void onCreateView() {
+
+    }
 }
