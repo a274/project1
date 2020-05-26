@@ -34,7 +34,6 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:maxLines="4"
-        android:text="@string/_2_5"
         android:textColor="@color/black"/>
 
     <LinearLayout
@@ -48,14 +47,15 @@
             android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_green"
-            android:text="@string/cucumber" />
+            android:text="Добавить в корзину"
+            android:elevation="5dp"/>
 
         <TextView
             android:id="@+id/price"
             android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:gravity="right|center_vertical"
-            android:text="30 Р"
+            android:text="200 руб/кг"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
