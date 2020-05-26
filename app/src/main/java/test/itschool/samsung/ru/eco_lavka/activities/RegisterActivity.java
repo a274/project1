@@ -10,13 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.io.IOException;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import test.itschool.samsung.ru.eco_lavka.R;
-import test.itschool.samsung.ru.eco_lavka.TextProcessing;
+import test.itschool.samsung.ru.eco_lavka.server_connect.TextProcessing;
 import test.itschool.samsung.ru.eco_lavka.cart.App;
 import test.itschool.samsung.ru.eco_lavka.server_connect.UserService;
 

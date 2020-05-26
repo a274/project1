@@ -10,6 +10,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import test.itschool.samsung.ru.eco_lavka.R;
 
 public class Categories extends Activity {
