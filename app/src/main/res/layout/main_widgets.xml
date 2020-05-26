@@ -39,7 +39,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/home_logo" />
 
             <SearchView
                 android:id="@+id/search_view"
